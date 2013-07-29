@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 		p++;
 	}
 	
-	/*add the abligatory boundary test*/
+	/*add the obligatory boundary test*/
 	printf("\\0 ==> %d\n", lower(0));
 	return 0;
 }
