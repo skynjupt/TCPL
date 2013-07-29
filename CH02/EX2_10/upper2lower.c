@@ -1,21 +1,34 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <string.h>
 
-void lower(char *p)
-{
-	int i, n;
+#define ORIGINAL	1
+#define TEST		1
 
-	n = strlen(p);
-	for(i = 0; i < n; i++)
+#if ORIGINAL
+int lower(int c)
+{
+	if(c >= 'A' && c <= 'Z')
 	{
-		p[i] <= 'Z' && p[i] >= 'A' ? p[i] += 'a' - 'A':' ';
+		return c+'a'-'A';
+	}
+	else
+	{
+		return c;
 	}
 }
+#endif
 
+#if TEST
 int main(int argc, char *argv[])
 {
-	char a[] = "Hello World!";
-	lower(a);
-	printf("----%s-----\n", a);
+	char *Tests="AaBb32CcdD3e2EfFGghHii2IJjK32kL32lMmNnOopPQqRrSsTtUuVvWwXx23yYzZ";
+	char *p = Tests;
+	
+	while('\0' != *p)
+	{
+		printf("%c ==> %c\n", *p, lower(*p));
+		p++;
+	}
 	return 0;
 }
+#endif
