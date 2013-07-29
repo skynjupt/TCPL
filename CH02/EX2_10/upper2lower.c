@@ -4,9 +4,10 @@
 #include <stdio.h> 
 #include <string.h>
 
-#define ORIGINAL	0
-#define SOLUTION	1
-#define TEST		1
+#define ORIGINAL		0
+#define SOLUTION		0
+#define PORTABLE_SOLUTION	1
+#define TEST			1
 
 #if ORIGINAL
 int lower(int c)
@@ -29,6 +30,16 @@ int lower(int c)
 }
 #endif
 
+#if PORTABLE_SOLUTION
+int lower(int c)
+{
+	char *Uppercase = "ABCDEFGHIJKLNMOPQRSTUVWXYZ";
+	char *Lowercase = "abcdefghijklnmopqrstuvwxyz";
+	char *p = NULL;
+	
+	return (NULL == (p = strchr(Uppercase, c)) ? c:*(Lowercase+(p-Uppercase))) ;
+}
+#endif
 #if TEST
 int main(int argc, char *argv[])
 {
