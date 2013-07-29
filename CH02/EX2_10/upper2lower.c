@@ -1,7 +1,8 @@
 #include <stdio.h> 
 #include <string.h>
 
-#define ORIGINAL	1
+#define ORIGINAL	0
+#define SOLUTION	1
 #define TEST		1
 
 #if ORIGINAL
@@ -15,6 +16,13 @@ int lower(int c)
 	{
 		return c;
 	}
+}
+#endif
+
+#if SOLUTION
+int lower(int c)
+{
+	return c >= 'A' && c <= 'Z' ? c + 'a' - 'A' : c; 
 }
 #endif
 
