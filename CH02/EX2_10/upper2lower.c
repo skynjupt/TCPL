@@ -51,6 +51,9 @@ int main(int argc, char *argv[])
 		printf("%c ==> %c\n", *p, lower(*p));
 		p++;
 	}
+	
+	/*add the abligatory boundary test*/
+	printf("\\0 ==> %c\n", lower(0));
 	return 0;
 }
 #endif
