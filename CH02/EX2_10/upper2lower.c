@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 	}
 	
 	/*add the abligatory boundary test*/
-	printf("\\0 ==> %c\n", lower(0));
+	printf("\\0 ==> %d\n", lower(0));
 	return 0;
 }
 #endif
